@@ -1,0 +1,20 @@
+.goal-container {
+  display: inline-block;
+}
+
+.goal-box {
+  display: inline-block;
+  border-radius: 3px;
+  padding: 15px;
+  margin: 10px 10px 0;
+}
+
+.more {
+  border: 2px solid green;
+  background-color: #9df1ab;
+}
+
+.less {
+  border: 2px solid deeppink;
+  background-color: hotpink;
+}

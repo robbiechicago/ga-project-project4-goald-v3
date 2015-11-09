@@ -1,0 +1,8 @@
+<h3>User page, yo</h3>
+  <section ng-controller="userCtrl as users">
+    <ul id="users">
+      <li ng-repeat="user in users.all" data-id="{{ user.id }}" ng-click="users.getUser(user.id)">
+        <strong>{{ user.name }}</strong> - <em>User ID: {{ user.id }}</em>
+      </li>
+    </ul>
+  </section>
