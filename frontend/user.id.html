@@ -1,24 +1,19 @@
 <p>this is the single user page.  Congratulations on getting here.</p>
 
 <section ng-controller="userIdCtrl as user">
-  <p>selected user id = {{ user.user.id }}</p>
-  <p>selected user name = {{ user.user.name }}</p>
+  <p>selected user id = {{ user.selected_user.id }}</p>
+  <p>selected user name = {{ user.selected_user.name }}</p>
   
-
-  <div ng-controller="eventCtrl as event">
-    <div class="goal-container" ng-repeat-start="project in user.projects">
-      <div data-project="{{ project.id }}" ng-init="user.goalInfo(project.id)" class="goal-box {{ user.goalInfo.more_less }}">
-        <div class="goals-cat">{{ user.goalInfo.category }}</div>
-        <div class="goals-thing">{{ user.goalInfo.goal_thing }}</div>
+  <div>
+    <p>{{ user.selected_user.goals }}</p>
+    <div class="goal-container" ng-repeat-start="goal in user.selected_user.goals">
+      <div class="goal-box {{ goal.more_less }}">
+        <div class="goals-cat">{{ goal.category }}</div>
+        <div class="goals-thing">{{ goal.goal_thing }}</div>
       </div>
-      <p>view activity</p>
-      <p>{{ project.id }}</p>
     </div>
     <b ng-repeat-end></b>
   </div>
-
-  </div>
-
 </section>
 
 

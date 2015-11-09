@@ -31,3 +31,33 @@ g30 = Goal.create(more_less: 'less', category: 'drink', goal_thing: 'sugary drin
 
 u1 = User.create(name: 'Rob Holloway')
 u2 = User.create(name: 'Homer Simpson')
+
+e1 = Event.create(user_id: 1, goal_id: 2)
+e2 = Event.create(user_id: 1, goal_id: 21)
+e3 = Event.create(user_id: 2, goal_id: 1)
+e4 = Event.create(user_id: 2, goal_id: 8)
+e5 = Event.create(user_id: 2, goal_id: 11)
+e6 = Event.create(user_id: 2, goal_id: 18)
+e7 = Event.create(user_id: 2, goal_id: 26)
+e8 = Event.create(user_id: 2, goal_id: 29)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

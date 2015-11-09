@@ -8,6 +8,14 @@ Bundler.require(*Rails.groups)
 
 module V3Api
   class Application < Rails::Application
+
+    config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
+      allow do
+        origins 'localhost:9000'
+        resource '*', :headers => :any, :methods => [:get, :post, :options, :delete]
+      end
+    end
+    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

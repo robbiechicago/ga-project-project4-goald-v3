@@ -14,30 +14,13 @@ function userIdCtrl($http, $state, $stateParams) {
     $http
       .get('http://localhost:3000/users/' + id)
       .then(function(response) {
-        var projects = response.data.projects;
-        var projectsWithGoals = []
-        for (var i = 0; i < projects.length; i++) {
-          console.log('projects[i]')
-          console.log(projects[i])
-          var p_id = projects[i].id;
-          console.log(p_id)
-          var g_id = projects[i].goal_id;
-          console.log(g_id)
-          $http
-            .get('http://localhost:3000/users/' + id + '/projects/' + p_id + '/goals/' + g_id)
-            .then(function(respose) {
-              console.log('response')
-              console.log(response)
-              projects[i].more_less = response.data.more_less
-              projects[i].category = response.data.category
-              projects[i].goal_thing = response.data.goal_thing
-              projectsWithGoals.push(projects[i]) 
-              console.log(projectsWithGoals)
+        self.selected_user = response.data
+        console.log(self.selected_user)
+        // var events = response.data.projects;
+
           }) 
         }
         
-    })
-  }
 
 
   function OLD_AND_DEADgetUser() {
