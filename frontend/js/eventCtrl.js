@@ -35,11 +35,11 @@ function eventCtrl($http, $state, $stateParams) {
 
     console.log(aNewEvent)
 
-    // $http
-    //   .post('http://localhost:3000/users/' + user_id + '/projects/' + project_id + '/goal/' + goal_id + '/events', aNewEvent)
-    //   .then(function(response) {
-    //     console.log(response);
-    // });
+    $http
+      .post('http://localhost:3000/users/' + user_id + '/goals/' + goal_id + '/events/', aNewEvent)
+      .then(function(response) {
+        console.log(response);
+    });
   }
 
 
