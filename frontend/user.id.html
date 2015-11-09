@@ -4,10 +4,10 @@
   <p>selected user id = {{ user.selected_user.id }}</p>
   <p>selected user name = {{ user.selected_user.name }}</p>
   
-  <div>
+  <div ng-controller="eventCtrl as event">
     <p>{{ user.selected_user.goals }}</p>
     <div class="goal-container" ng-repeat-start="goal in user.selected_user.goals">
-      <div class="goal-box {{ goal.more_less }}">
+      <div class="goal-box {{ goal.more_less }}" ng-click="event.newEvent(user.selected_user.id, goal.id)">
         <div class="goals-cat">{{ goal.category }}</div>
         <div class="goals-thing">{{ goal.goal_thing }}</div>
       </div>

@@ -19,10 +19,8 @@ function eventCtrl($http, $state, $stateParams) {
   }
 
   self.newEvent = newEvent;
-  function newEvent(project_id, goal_id, created_at, user_id) {
+  function newEvent(user_id, goal_id) {
     console.log('a nice new event');
-    console.log('project id: ' + project_id)
-    console.log('project created at ' + created_at)
     console.log('user_id = ' + user_id)
     console.log('goal_id = ' + goal_id)
 
@@ -30,17 +28,18 @@ function eventCtrl($http, $state, $stateParams) {
     console.log(theDateTime)
 
     var aNewEvent = {
-      "project_id": project_id,
+      "user_id": user_id,
+      "goal_id": goal_id,
       "event_datetime": theDateTime
     }
 
     console.log(aNewEvent)
 
-    $http
-      .post('http://localhost:3000/users/' + user_id + '/projects/' + project_id + '/goal/' + goal_id + '/events', aNewEvent)
-      .then(function(response) {
-        console.log(response);
-    });
+    // $http
+    //   .post('http://localhost:3000/users/' + user_id + '/projects/' + project_id + '/goal/' + goal_id + '/events', aNewEvent)
+    //   .then(function(response) {
+    //     console.log(response);
+    // });
   }
 
 
