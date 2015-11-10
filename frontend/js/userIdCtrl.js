@@ -18,9 +18,5 @@ function userIdCtrl($http, $state, $stateParams) {
         console.log(self.selected_user)
       }) 
   }
-        
-  
-
-  
 
 }

@@ -34,7 +34,12 @@ function eventCtrl($http, $state, $stateParams) {
   self.countEvents = countEvents;
   function countEvents(user_id, goal_id) {
     // JUST GET ALL EVENTS FOR USER/GOAL THEN REMOVE NULL TIMES THEN COUNT
+    $http
+      .get('http://localhost:3000/users/' + user_id + '/goals/' + goal_id + '/events')
+      .then(function(response) {
+        console.log(response);
 
+    });
   }
 
 }

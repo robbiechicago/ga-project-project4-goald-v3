@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   def index
-    @events = User.find(params[:user_id]).events
+    @events = Event.where(:user_id => params[:user_id], :goal_id => params[:goal_id])
 
     render json: @events
   end
