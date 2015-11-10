@@ -7,17 +7,6 @@ function eventCtrl($http, $state, $stateParams) {
   
   var self = this;
 
-  self.getProjectEvents = getProjectEvents
-  function getProjectEvents(project_id, user_id) {
-    $http
-      .get('http://localhost:3000/users/' + user_id + '/projects/' + project_id + '/events/')
-      .then(function(response) {
-        console.log(response);
-        self.events = response.data
-        console.log(self.events)
-    });
-  }
-
   self.newEvent = newEvent;
   function newEvent(user_id, goal_id) {
     console.log('a nice new event');
@@ -42,6 +31,26 @@ function eventCtrl($http, $state, $stateParams) {
     });
   }
 
+  self.countEvents = countEvents;
+  function countEvents(user_id, goal_id) {
+    // JUST GET ALL EVENTS FOR USER/GOAL THEN REMOVE NULL TIMES THEN COUNT
 
+  }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

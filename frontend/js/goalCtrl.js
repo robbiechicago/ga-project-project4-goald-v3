@@ -17,6 +17,7 @@ function goalCtrl($http) {
         console.log(response.data)
         self.all = response.data
       });
+      // NEED TO SELECT DISTINCT HERE, INNIT.
   };
 
   getGoals();

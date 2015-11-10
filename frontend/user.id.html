@@ -6,11 +6,12 @@
   
   <div ng-controller="eventCtrl as event">
     <p>{{ user.selected_user.goals }}</p>
-    <div class="goal-container" ng-repeat-start="goal in user.selected_user.goals">
+    <div class="goal-container" ng-repeat-start="goal in user.selected_user.goals | unique: 'id'">
       <div class="goal-box {{ goal.more_less }}" ng-click="event.newEvent(user.selected_user.id, goal.id)">
         <div class="goals-cat">{{ goal.category }}</div>
         <div class="goals-thing">{{ goal.goal_thing }}</div>
       </div>
+    <div class="num-events" ng-init="countEvents(user.selected_user.id, goal.id)"><em>{{ 1 + 1 }} events</em></div>
     </div>
     <b ng-repeat-end></b>
   </div>
