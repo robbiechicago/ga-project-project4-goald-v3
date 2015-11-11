@@ -3,5 +3,12 @@
 <section ng-controller="userEventsCtrl as userEvents">
   <p>awesome!</p>
   <p>{{ userEvents.all }}</p>
-  <p>1 + 5 = {{ 1 + 5 }}</p>
+  <table>
+    <tr>
+      <th>Date</th>
+    </tr>
+    <tr ng-repeat="event in userEvents.all">
+      <td>{{ event.event_datetime | date:'MM/dd/yyyy' }}</td>
+    </tr>
+  </table>
 </section>
