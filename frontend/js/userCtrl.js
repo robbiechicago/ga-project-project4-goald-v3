@@ -24,7 +24,7 @@ function userCtrl($http, $state, $stateParams) {
   self.getUser = getUser;
 
   function getUser(user_id) {
-    console.log('boomting')
+    console.log('switching to userID page')
     $state.go('userId', { id:user_id })
   }
 }

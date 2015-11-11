@@ -20,8 +20,8 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       templateUrl: 'user.id.html'
     })
     .state('userEvents', {
-      url: '/user/:id/goal/:goal_id',
-      templateUrl: 'userevents.html'
+      url: '/user/:user_id/goal/:goal_id/events',
+      templateUrl: 'userEvents.html'
     })
 }
 

@@ -45,16 +45,8 @@ function eventCtrl($http, $state, $stateParams) {
 
   self.showEvents = showEvents;
   function showEvents(user_id, goal_id) {
-    console.log('showing user event history')
-    console.log('user_id = ' + user_id)
-    console.log('goal_id = ' + goal_id)
-
-    $http
-      .get('http://localhost:3000/users/' + user_id + '/goals/' + goal_id + '/events')
-      .then(function(response) {
-        console.log('running showEvents from eventCtrl')
-        console.log(response);
-    });
+    console.log('switching to user events page')
+    $state.go('userEvents', { user_id, goal_id })
   }
 
 }
