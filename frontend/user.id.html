@@ -7,15 +7,17 @@
   <div ng-controller="eventCtrl as event">
     <p>{{ user.selected_user.goals }}</p>
     <p>{{ user.selected_user.events }}</p>
-    <div class="goal-container" ng-repeat-start="goal in user.selected_user.goals | unique: 'id'">
+    <div class="goal-container" ng-repeat="goal in user.selected_user.goals | unique: 'id'">
+
       <div class="goal-box {{ goal.more_less }}" ng-click="event.newEvent(user.selected_user.id, goal.id)">
         <div class="goals-cat">{{ goal.category }}</div>
         <div class="goals-thing">{{ goal.goal_thing }}</div>
       </div>
-<!--     <div class="num-events" ng-repeat="event in filtered = (user.selected_user.goals | filter: goal.id)"><em>{{ filtered.length }} events</em></div>
-    </div> -->
-      <div>Show History</div>
-    <b ng-repeat-end></b>
+
+      <div ng-click="event.showEvents(user.selected_user, goal.id)">Show History</div>
+
+    </div>
   </div>
 </section>
 
+<!-- <div class="num-events" ng-repeat="event in filtered = (user.selected_user.goals | filter: goal.id)"><em>{{ filtered.length }} events</em></div> -->

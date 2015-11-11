@@ -43,6 +43,11 @@ function eventCtrl($http, $state, $stateParams) {
     });
   }
 
+  self.showEvents = showEvents;
+  function showEvents(user_id, goal_id) {
+    console.log('showing user event history')
+  }
+
 }
 
 

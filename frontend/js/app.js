@@ -19,6 +19,10 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       url: '/user/:id',
       templateUrl: 'user.id.html'
     })
+    .state('userEvents', {
+      url: '/user/:id/goal/:id',
+      templateUrl: 'userevents.html'
+    })
 }
 
 console.log('Hello RoHo.  app.js connected')
