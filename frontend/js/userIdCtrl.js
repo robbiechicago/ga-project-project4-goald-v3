@@ -11,6 +11,7 @@ function userIdCtrl($http, $state, $stateParams) {
   self.getUser = getUser;
   getUser()
   function getUser() {
+
     $http
       .get('http://localhost:3000/users/' + id)
       .then(function(response) {
