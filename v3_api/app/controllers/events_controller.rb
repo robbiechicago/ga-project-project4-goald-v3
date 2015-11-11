@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.where(:user_id => params[:user_id], :goal_id => params[:goal_id])
+    @allevents = Event.where(:user_id => params[:user_id], :goal_id => params[:goal_id])
+    @events = @allevents.where.not(event_datetime: nil)
 
     render json: @events
   end
