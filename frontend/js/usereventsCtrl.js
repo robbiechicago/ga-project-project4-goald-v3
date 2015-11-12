@@ -36,6 +36,7 @@ function userEventsCtrl($http, $state, $stateParams) {
     self.datetimes = self.all.map(function(a) {
       return new Date(a.event_datetime);
     });
+    console.log('array from getDatetimes:');
     console.log(self.datetimes);
     eventDateElements();
   }
@@ -49,7 +50,6 @@ function userEventsCtrl($http, $state, $stateParams) {
   self.eventDateElements = eventDateElements
   function eventDateElements() {
     for (var i = 0; i < self.datetimes.length; i++) {
-      // self.theDate = new Date(self.datetimes[i]);
       self.theDate = self.datetimes[i];
       self.hour = self.theDate.getHours();
       self.day = self.theDate.getDay();
@@ -82,11 +82,13 @@ function userEventsCtrl($http, $state, $stateParams) {
     console.log('Weeks: ' + self.weeks)
     console.log('Months: ' + self.months)
     console.log('Years: ' + self.years)
+    minDate()
   }
 
   self.minDate = minDate
   function minDate() {
-
+    self.firstDate = new Date(Math.min.apply(null, self.datetimes));
+    console.log('first date: ' + self.firstDate)
   }
 
   self.dateElementTotals = dateElementTotals
