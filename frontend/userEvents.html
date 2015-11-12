@@ -6,9 +6,19 @@
   <table>
     <tr>
       <th>Date</th>
+      <th>Year</th>
+      <th>Month</th>
+      <th>Week</th>
+      <th>Day</th>
+      <th>Hour</th>
     </tr>
     <tr ng-repeat="event in userEvents.all">
       <td>{{ event.event_datetime | date:'MM/dd/yyyy' }}</td>
+      <td>{{ event.event_datetime | date:'yyyy' }}</td>
+      <td>{{ event.event_datetime | date:'MMMM' }}</td>
+      <td>{{ event.event_datetime | date:'ww' }}</td>
+      <td>{{ event.event_datetime | date:'EEEE' }}</td>
+      <td>{{ event.event_datetime | date:'HH' }}</td>
     </tr>
   </table>
 </section>
