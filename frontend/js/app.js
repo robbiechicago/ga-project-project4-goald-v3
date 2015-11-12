@@ -1,5 +1,5 @@
 angular
-  .module('goaldApp', ['ui.router', 'angular.filter', 'chart.js'])
+  .module('goaldApp', ['ui.router', 'angular.filter'])
   .config(MainRouter);
 
 function MainRouter($stateProvider, $urlRouterProvider) {
