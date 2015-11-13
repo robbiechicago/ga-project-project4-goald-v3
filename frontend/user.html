@@ -1,9 +1,10 @@
-<h3>User page, yo</h3>
-  <section ng-controller="userCtrl as users">
-    <ul id="users">
-      <li ng-repeat="user in users.all" data-id="{{ user.id }}" ng-click="users.getUser(user.id)">
-        <strong>{{ user.name }}</strong> - <em>User ID: {{ user.id }}</em>
-      </li>
-    </ul>
+<section ng-controller="userCtrl as users">
+  <p>Please select a user</p>
+  <p class="comment">(In production this will be a login page)</p>
+  <ul id="users">
+    <li ng-repeat="user in users.all" data-id="{{ user.id }}" ng-click="users.getUser(user.id)">
+      <strong>{{ user.name }}</strong>
+    </li>
+  </ul>
 
-  </section>
+</section>
