@@ -1,12 +1,10 @@
-<p>this is the single user page.  Congratulations on getting here.</p>
-
 <section ng-controller="userIdCtrl as user">
-  <p>selected user id = {{ user.selected_user.id }}</p>
-  <p>selected user name = {{ user.selected_user.name }}</p>
+<!--   <p>selected user id = {{ user.selected_user.id }}</p>
+  <p>selected user name = {{ user.selected_user.name }}</p> -->
   
+  <p class="link" ui-sref="user"><-- Back to user selection...</p>
+
   <div ng-controller="eventCtrl as event">
-    <p>{{ user.selected_user.goals }}</p>
-    <p>{{ user.selected_user.events }}</p>
     <div class="goal-container" ng-repeat="goal in user.selected_user.goals | unique: 'id'">
 
       <div class="goal-box {{ goal.more_less }}" ng-click="event.newEvent(user.selected_user.id, goal.id)">
@@ -14,7 +12,7 @@
         <div class="goals-thing">{{ goal.goal_thing }}</div>
       </div>
 
-      <div ng-click="event.showEvents(user.selected_user.id, goal.id)">Show History</div>
+      <div class="history" ng-click="event.showEvents(user.selected_user.id, goal.id)">Show History</div>
 
     </div>
   </div>
