@@ -40,6 +40,12 @@ e5 = Event.create(user_id: 2, goal_id: 11)
 e6 = Event.create(user_id: 2, goal_id: 18)
 e7 = Event.create(user_id: 2, goal_id: 26)
 e8 = Event.create(user_id: 2, goal_id: 29)
+e9 = Event.create(user_id: 1, goal_id: 2, event_datetime: '2014-04-09T14:09:12.414Z')
+e10 = Event.create(user_id: 1, goal_id: 2, event_datetime: '2015-10-09T10:09:12.414Z')
+e11 = Event.create(user_id: 1, goal_id: 2, event_datetime: '2015-10-09T11:09:12.414Z')
+e12 = Event.create(user_id: 1, goal_id: 2, event_datetime: '2015-11-09T02:09:12.414Z')
+e13 = Event.create(user_id: 1, goal_id: 2, event_datetime: '2015-11-09T11:09:12.414Z')
+e14 = Event.create(user_id: 1, goal_id: 2, event_datetime: '2015-11-09T16:09:12.414Z')
 
 
 

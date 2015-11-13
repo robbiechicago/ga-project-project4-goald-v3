@@ -89,11 +89,27 @@ function userEventsCtrl($http, $state, $stateParams) {
   function minDate() {
     self.firstDate = new Date(Math.min.apply(null, self.datetimes));
     console.log('first date: ' + self.firstDate)
+    monthList();
+  }
+
+  self.yearMonth = [];
+  self.monthList = monthList
+  function monthList() {
+    self.vDatetime = self.firstDate;    
+    while (self.vDatetime <= moment()) {
+      self.vYearMonth = {};
+      self.vYearMonth.year = moment(self.vDatetime).year();
+      self.vYearMonth.month = moment(self.vDatetime).month() + 1;  //MONTH ZERO INDEXED
+      self.yearMonth.push(self.vYearMonth)
+      self.vDatetime = moment(self.vDatetime).add(1, 'months');
+    }
+    console.log('outside of while loop - self.yearMonth:');
+    console.log(self.yearMonth);
   }
 
   self.dateElementTotals = dateElementTotals
   function dateElementTotals() {
-
+    console.log('this doesn\'t do anything yet')
   }
 
 }
