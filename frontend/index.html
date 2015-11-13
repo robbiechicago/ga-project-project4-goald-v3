@@ -6,7 +6,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.7/angular-filter.min.js"></script>
-  <script src="//cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
   <script src="js/app.js"></script>
   <script src="js/goalCtrl.js"></script>
@@ -18,8 +18,10 @@
 </head>
 
 <body ng-app="goaldApp">
-  <header ng-include="'header.html'"></header>
-  <div class="wrapper" ui-view></div>
+  <div class="wrapper">
+    <header ng-include="'header.html'"></header>
+    <div class="main" ui-view></div>
+  </div>
 </body>
 
 </html>

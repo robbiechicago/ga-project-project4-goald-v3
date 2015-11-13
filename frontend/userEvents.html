@@ -1,8 +1,20 @@
 <h3>The user events page</h3>
 
 <section ng-controller="userEventsCtrl as userEvents">
-  <p>awesome!</p>
-  <p>{{ userEvents.all }}</p>
+
+  <table>
+    <tr>
+      <th>Year</th>
+      <th>Month</th>
+      <th>Events</th>
+    </tr>
+    <tr ng-repeat="date in userEvents.yearMonth">
+      <td>{{ date.year }}</td>
+      <td>{{ date.month }}</td>
+      <td>{{ date.numEvents }}</td>
+    </tr>
+  </table>
+
   <table>
     <tr>
       <th>Date</th>
@@ -22,18 +34,7 @@
     </tr>    
   </table>
 
-  <table>
-    <tr>
-      <th>Year</th>
-      <th>Month</th>
-      <th>Events</th>
-    </tr>
-    <tr ng-repeat="date in userEvents.yearMonth">
-      <td>{{ date.year }}</td>
-      <td>{{ date.month }}</td>
-      <td>some value</td>
-    </tr>
-  </table>
+
   
 
 

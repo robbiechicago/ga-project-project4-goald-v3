@@ -96,10 +96,16 @@ function userEventsCtrl($http, $state, $stateParams) {
   self.monthList = monthList
   function monthList() {
     self.vDatetime = self.firstDate;    
+    // THIS WHILE LOOP GETS ALL THE MONTHS AND YEARS SINCE FIRST EVENT
+    // AND CREATES OBJECTS FOR EACH MONTH WITH YEAR, MONTH AND NUMBER OF EVENTS
     while (self.vDatetime <= moment()) {
+      // THIS BIT GETS THE YEARS AND MONTHS
       self.vYearMonth = {};
       self.vYearMonth.year = moment(self.vDatetime).year();
       self.vYearMonth.month = moment(self.vDatetime).month() + 1;  //MONTH ZERO INDEXED
+      // THIS BIT GETS THE COUNT OF EVENTS IN THE MONTH
+      self.vYearMonth.numEvents = dateElementTotals(self.vYearMonth.year, self.vYearMonth.month)
+      //THIS BIT PUSHES THE OBJECT TO THE ARRAY, ADDS A MONTH AND LOOPS
       self.yearMonth.push(self.vYearMonth)
       self.vDatetime = moment(self.vDatetime).add(1, 'months');
     }
@@ -108,8 +114,12 @@ function userEventsCtrl($http, $state, $stateParams) {
   }
 
   self.dateElementTotals = dateElementTotals
-  function dateElementTotals() {
-    console.log('this doesn\'t do anything yet')
+  function dateElementTotals(year, month) {
+    selectedMonthYear = self.datetimes.filter(function(datetime) {
+      return moment(datetime).year() === year
+          && moment(datetime).month() + 1 === month
+    })
+    return selectedMonthYear.length;
   }
 
 }
