@@ -22,6 +22,18 @@
     </tr>    
   </table>
 
+  <table>
+    <tr>
+      <th>Year</th>
+      <th>Month</th>
+      <th>Events</th>
+    </tr>
+    <tr ng-repeat="date in userEvents.yearMonth">
+      <td>{{ date.year }}</td>
+      <td>{{ date.month }}</td>
+      <td>some value</td>
+    </tr>
+  </table>
   
 
 
