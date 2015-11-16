@@ -1,42 +1,48 @@
-<section ng-controller="userEventsCtrl as userEvents">
+<section id="user-events-outer" ng-controller="userEventsCtrl as userEvents">
+  <section id="user-events-inner">
+  
+    <p class="link" ng-click="userEvents.backButton(userEvents.user_id)"><-- Back to all goals...</p>
 
-  <p class="link" ng-click="userEvents.backButton(userEvents.user_id)"><-- Back to all goals...</p>
+    <h5>Monthly activity</h5>
+    <center>
+      <table class="events-table">
+        <tr>
+          <th class="cell">Year</th>
+          <th class="cell">Month</th>
+          <th class="cell">Events</th>
+        </tr>
+        <tr ng-repeat="date in userEvents.yearMonth">
+          <td class="cell">{{ date.year }}</td>
+          <td class="cell">{{ date.month }}</td>
+          <td class="cell">{{ date.numEvents }}</td>
+        </tr>
+      </table>
+    </center>
 
-  <table>
-    <tr>
-      <th>Year</th>
-      <th>Month</th>
-      <th>Events</th>
-    </tr>
-    <tr ng-repeat="date in userEvents.yearMonth">
-      <td>{{ date.year }}</td>
-      <td>{{ date.month }}</td>
-      <td>{{ date.numEvents }}</td>
-    </tr>
-  </table>
-
-  <table>
-    <tr>
-      <th>Date</th>
-      <th>Year</th>
-      <th>Month</th>
-      <th>Week</th>
-      <th>Day</th>
-      <th>Hour</th>
-    </tr>
-    <tr ng-repeat="event in userEvents.all">
-      <td>{{ event.event_datetime | date:'MM/dd/yyyy' }}</td>
-      <td>{{ event.event_datetime | date:'yyyy' }}</td>
-      <td>{{ event.event_datetime | date:'MMMM' }}</td>
-      <td>{{ event.event_datetime | date:'ww' }}</td>
-      <td>{{ event.event_datetime | date:'EEEE' }}</td>
-      <td>{{ event.event_datetime | date:'HH' }}</td>
-    </tr>    
-  </table>
-
+    <h5>All activity</h5>
+    <center>
+      <table class="events-table">
+        <tr>
+          <th class="cell">Date</th>
+          <th class="cell">Year</th>
+          <th class="cell">Month</th>
+          <th class="cell">Week</th>
+          <th class="cell">Day</th>
+          <th class="cell">Time</th>
+        </tr>
+        <tr ng-repeat="event in userEvents.all">
+          <td class="cell">{{ event.event_datetime | date:'MM/dd/yyyy' }}</td>
+          <td class="cell">{{ event.event_datetime | date:'yyyy' }}</td>
+          <td class="cell">{{ event.event_datetime | date:'MMM' }}</td>
+          <td class="cell">{{ event.event_datetime | date:'ww' }}</td>
+          <td class="cell">{{ event.event_datetime | date:'EEE' }}</td>
+          <td class="cell">{{ event.event_datetime | date:'HH:mm' }}</td>
+        </tr>    
+      </table>
+    </center>
 
   
 
 
-  
+  </section>
 </section>

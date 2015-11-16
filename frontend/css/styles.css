@@ -97,20 +97,40 @@ p.link {
 }
 
 .less {
-  border: 2px solid MediumVioletRed;
-  background-color: pink;
+  border: 2px solid Red;
+  background-color: #FECFCF;
 }
 
 .less .goals-cat {
-  color: MediumVioletRed;
+  color: Red;
 }
 
 .history {
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 
+#user-events-outer {
+  /*USE THIS TO TRY TO HIDE SCROLL BARS*/
+}
 
+#user-events-inner {
+  /*USE THIS TO TRY TO HIDE SCROLL BARS*/
+}
 
+.events-table {
+  margin: 20px 15px;
+}
+
+.events-table th {
+  font-size: 0.8em;
+  border-collapse: collapse;
+  border-bottom: 1px solid black;
+}
+
+.events-table .cell {
+  font-size: 0.7em;
+  padding-right: 10px;
+}
 
 
 
