@@ -122,6 +122,12 @@ function userEventsCtrl($http, $state, $stateParams) {
     return selectedMonthYear.length;
   }
 
+  self.backButton = backButton
+  function backButton(user_id) {
+    console.log('going back to user goals.  User ID is:');
+    console.log(user_id);
+    $state.go('userId', { id:user_id });
+  }
 }
 
 
